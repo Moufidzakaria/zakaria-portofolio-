@@ -221,7 +221,7 @@ export default function App() {
               onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
               <IconGithub />
             </a>
-            <a href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/?locale=fr_FR" target="_blank" style={{ color: "#94a3b8", display:"flex" }}
+            <a  href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/"  target="_blank" style={{ color: "#94a3b8", display:"flex" }}
               onMouseEnter={e => e.currentTarget.style.color = G}
               onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
               <IconLinkedin />
@@ -432,7 +432,7 @@ export default function App() {
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Btn href="mailto:moufidzakaria92@gmail.com" primary><IconMail size={15}/> Email Me</Btn>
-           <Btn href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/"><IconLinkedin size={15}/> LinkedIn</Btn>
+           <Btn  href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank"><IconLinkedin size={15}/> LinkedIn</Btn>
             <Btn href="https://github.com/Moufidzakaria"><IconGithub size={15}/> GitHub</Btn>
           </div>
         </Fade>
