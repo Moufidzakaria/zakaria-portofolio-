@@ -18,6 +18,9 @@ const IconMenu     = () => <svg width="22" height="22" viewBox="0 0 24 24" fill=
 const IconClose    = () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>;
 const IconCheck    = ({size=14}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>;
 const IconPipe     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>;
+const IconDownload = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>;
+
+const CV_PDF_PATH = "/Zakaria_Moufid_CV.pdf";
 
 function useOnScreen(threshold = 0.15) {
   const ref = useRef(null);
@@ -179,8 +182,10 @@ export default function App() {
     <span style={{ background: "rgba(52,211,153,0.07)", border: "0.5px solid rgba(52,211,153,0.2)", color: G, fontSize: 11, padding: "3px 10px", borderRadius: 20 }}>{t}</span>
   );
 
-  const Btn = ({ href, children, primary }) => (
+  const Btn = ({ href, children, primary, download }) => (
     <a href={href} target={href.startsWith("http") ? "_blank" : undefined}
+      download={download}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       style={{
         display: "inline-flex", alignItems: "center", gap: 7,
         padding: "10px 22px", borderRadius: 6, fontSize: 13, fontWeight: primary ? 600 : 400,
@@ -216,6 +221,12 @@ export default function App() {
                 {s[0].toUpperCase() + s.slice(1)}
               </a>
             ))}
+            <a href={CV_PDF_PATH} download
+              style={{ display: "flex", alignItems: "center", gap: 6, color: "#94a3b8", fontSize: 13, textDecoration: "none" }}
+              onMouseEnter={e => e.currentTarget.style.color = G}
+              onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
+              <IconDownload size={15} /> CV
+            </a>
             <a href="https://github.com/Moufidzakaria" target="_blank" style={{ color: "#94a3b8", display:"flex" }}
               onMouseEnter={e => e.currentTarget.style.color = G}
               onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
@@ -253,6 +264,10 @@ export default function App() {
               {s[0].toUpperCase() + s.slice(1)}
             </a>
           ))}
+          <a href={CV_PDF_PATH} download onClick={() => setOpen(false)}
+            style={{ display: "flex", alignItems: "center", gap: 8, color: "#94a3b8", fontSize: 16, textDecoration: "none" }}>
+            <IconDownload size={18} /> Download CV
+          </a>
           <div style={{ display: "flex", gap: 18, paddingTop: 4 }}>
             <a href="https://github.com/Moufidzakaria" target="_blank" style={{ color: "#94a3b8" }}><IconGithub size={20}/></a>
             <a href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank" style={{ color: "#94a3b8" }}><IconLinkedin size={20}/></a>
@@ -276,6 +291,7 @@ export default function App() {
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", opacity: 0, animation: "fu .6s ease .9s forwards" }}>
           <Btn href="#projects" primary>View Projects</Btn>
+          <Btn href={CV_PDF_PATH} download><IconDownload size={15}/> Download CV</Btn>
           <Btn href="#contact">Contact Me</Btn>
         </div>
       </section>
@@ -432,6 +448,7 @@ export default function App() {
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Btn href="mailto:moufidzakaria92@gmail.com" primary><IconMail size={15}/> Email Me</Btn>
+            <Btn href={CV_PDF_PATH} download><IconDownload size={15}/> Download CV</Btn>
            <Btn  href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank"><IconLinkedin size={15}/> LinkedIn</Btn>
             <Btn href="https://github.com/Moufidzakaria"><IconGithub size={15}/> GitHub</Btn>
           </div>
@@ -451,5 +468,4 @@ export default function App() {
       `}</style>
     </div>
   );
-}// Modifié le Sat 04 Jul 2026 03:13:46 PM GMT
-// Nouvelle modification de test
+}
