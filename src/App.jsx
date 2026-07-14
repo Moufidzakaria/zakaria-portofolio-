@@ -2,20 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconMail,
+  IconMail as TablerMail,
   IconTestPipe,
-  IconCode,
+  IconCode as TablerCode,
   IconGitBranch,
   IconPackage,
-  IconBug,
+  IconBug as TablerBug,
   IconChartBar,
-  IconLink,
+  IconLink as TablerLink,
   IconExternalLink,
   IconMenu2,
   IconX,
-  IconCheck,
+  IconCheck as TablerCheck,
   IconGitMerge,
-  IconDownload,
+  IconDownload as TablerDownload,
   IconBrandDocker,
   IconBrandTypescript,
   IconBrandJavascript,
@@ -33,20 +33,22 @@ const BG = "#0a0f1e";
 
 const IconGithub = ({ size = 18 }) => <IconBrandGithub size={size} />;
 const IconLinkedin = ({ size = 18 }) => <IconBrandLinkedin size={size} />;
-const IconMail = ({ size = 18 }) => <IconMail size={size} />;
+const IconMail = ({ size = 18 }) => <TablerMail size={size} />;
 const IconTest = ({ size = 18 }) => <IconTestPipe size={size} />;
-const IconCode = ({ size = 18 }) => <IconCode size={size} />;
+const IconCode = ({ size = 18 }) => <TablerCode size={size} />;
 const IconBranch = ({ size = 18 }) => <IconGitBranch size={size} />;
 const IconBox = ({ size = 18 }) => <IconPackage size={size} />;
-const IconBug = ({ size = 18 }) => <IconBug size={size} />;
+const IconBug = ({ size = 18 }) => <TablerBug size={size} />;
 const IconChart = ({ size = 18 }) => <IconChartBar size={size} />;
-const IconLink = ({ size = 18 }) => <IconLink size={size} />;
+const IconLink = ({ size = 18 }) => <TablerLink size={size} />;
 const IconExt = ({ size = 13 }) => <IconExternalLink size={size} />;
 const IconMenu = () => <IconMenu2 size={22} />;
 const IconClose = () => <IconX size={22} />;
-const IconCheck = ({ size = 14 }) => <IconCheck size={size} />;
+const IconCheck = ({ size = 14 }) => <TablerCheck size={size} />;
 const IconPipe = ({ size = 18 }) => <IconGitMerge size={size} />;
-const IconDownload = ({ size = 18 }) => <IconDownload size={size} />;
+const IconDownload = ({ size = 18 }) => <TablerDownload size={size} />;
+const IconLayout = ({ size = 18 }) => <IconLayoutGrid size={size} />;
+const IconGit = ({ size = 18 }) => <IconBrandGit size={size} />;
 
 const CV_PDF_PATH = "Zakaria_Moufid_CV.pdf";
 
@@ -188,38 +190,38 @@ const PROJECTS = [
     link: "https://github.com/Moufidzakaria/automation-testing-ci-cd-azure-devops",
   },
   {
-  icon: <IconPipe size={20} />,
-  title: "Enterprise QA Automation Framework",
-  subtitle: "Playwright • TypeScript • Azure DevOps • CI/CD",
-  desc: "Enterprise-grade QA Automation Framework built with Playwright and TypeScript. Features Page Object Model architecture, End-to-End and API Testing, Docker support, Cross-Browser execution, Cookie & Session management, and automated CI/CD pipelines using Azure DevOps and GitHub Actions.",
-  bullets: [
-    "Playwright + TypeScript Enterprise Framework",
-    "Page Object Model (POM) Architecture",
-    "End-to-End & REST API Testing",
-    "Cross-Browser Testing (Chromium, Firefox, WebKit)",
-    "Authentication, Cookies & Session Management",
-    "Docker & Docker Compose",
-    "Azure DevOps + GitHub Actions CI/CD",
-    "HTML Reports, Screenshots & Test Artifacts"
-  ],
-  tags: [
-    "Playwright",
-    "TypeScript",
-    "QA Automation",
-    "API Testing",
-    "Azure DevOps",
-    "GitHub Actions",
-    "Docker",
-    "Docker Compose",
-    "CI/CD",
-    "POM",
-    "Cross Browser",
-    "REST API",
-    "Cookies",
-    "HTML Report"
-  ],
-  link: "https://github.com/Moufidzakaria/Entreprise-End-to-End-2",
-}
+    icon: <IconPipe size={20} />,
+    title: "Enterprise QA Automation Framework",
+    subtitle: "Playwright • TypeScript • Azure DevOps • CI/CD",
+    desc: "Enterprise-grade QA Automation Framework built with Playwright and TypeScript. Features Page Object Model architecture, End-to-End and API Testing, Docker support, Cross-Browser execution, Cookie & Session management, and automated CI/CD pipelines using Azure DevOps and GitHub Actions.",
+    bullets: [
+      "Playwright + TypeScript Enterprise Framework",
+      "Page Object Model (POM) Architecture",
+      "End-to-End & REST API Testing",
+      "Cross-Browser Testing (Chromium, Firefox, WebKit)",
+      "Authentication, Cookies & Session Management",
+      "Docker & Docker Compose",
+      "Azure DevOps + GitHub Actions CI/CD",
+      "HTML Reports, Screenshots & Test Artifacts"
+    ],
+    tags: [
+      "Playwright",
+      "TypeScript",
+      "QA Automation",
+      "API Testing",
+      "Azure DevOps",
+      "GitHub Actions",
+      "Docker",
+      "Docker Compose",
+      "CI/CD",
+      "POM",
+      "Cross Browser",
+      "REST API",
+      "Cookies",
+      "HTML Report"
+    ],
+    link: "https://github.com/Moufidzakaria/Entreprise-End-to-End-2",
+  }
 ];
 
 export default function App() {
@@ -299,7 +301,7 @@ export default function App() {
               onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
               <IconGithub />
             </a>
-            <a  href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/"  target="_blank" style={{ color: "#94a3b8", display:"flex" }}
+            <a href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank" style={{ color: "#94a3b8", display:"flex" }}
               onMouseEnter={e => e.currentTarget.style.color = G}
               onMouseLeave={e => e.currentTarget.style.color = "#94a3b8"}>
               <IconLinkedin />
@@ -516,7 +518,7 @@ export default function App() {
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Btn href="mailto:moufidzakaria92@gmail.com" primary><IconMail size={15}/> Email Me</Btn>
             <Btn href={CV_PDF_PATH} download><IconDownload size={15}/> Download CV</Btn>
-           <Btn  href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank"><IconLinkedin size={15}/> LinkedIn</Btn>
+            <Btn href="https://www.linkedin.com/in/zakaria-moufid-5294082a1/" target="_blank"><IconLinkedin size={15}/> LinkedIn</Btn>
             <Btn href="https://github.com/Moufidzakaria"><IconGithub size={15}/> GitHub</Btn>
           </div>
         </Fade>
