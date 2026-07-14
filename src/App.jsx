@@ -1,24 +1,52 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+  IconTestPipe,
+  IconCode,
+  IconGitBranch,
+  IconPackage,
+  IconBug,
+  IconChartBar,
+  IconLink,
+  IconExternalLink,
+  IconMenu2,
+  IconX,
+  IconCheck,
+  IconGitMerge,
+  IconDownload,
+  IconBrandDocker,
+  IconBrandTypescript,
+  IconBrandJavascript,
+  IconBrandGit,
+  IconWorld,
+  IconCookie,
+  IconReport,
+  IconLayoutGrid,
+  IconBrowser,
+  IconApi,
+} from "@tabler/icons-react";
 
 const G = "#34d399";
 const BG = "#0a0f1e";
 
-const IconGithub   = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>;
-const IconLinkedin = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>;
-const IconMail     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>;
-const IconTest     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>;
-const IconCode     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>;
-const IconBranch   = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>;
-const IconBox      = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><line x1="12" y1="22" x2="12" y2="12"/></svg>;
-const IconBug      = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>;
-const IconChart    = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>;
-const IconLink     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>;
-const IconExt      = ({size=13}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>;
-const IconMenu     = () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>;
-const IconClose    = () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>;
-const IconCheck    = ({size=14}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>;
-const IconPipe     = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>;
-const IconDownload = ({size=18}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>;
+const IconGithub = ({ size = 18 }) => <IconBrandGithub size={size} />;
+const IconLinkedin = ({ size = 18 }) => <IconBrandLinkedin size={size} />;
+const IconMail = ({ size = 18 }) => <IconMail size={size} />;
+const IconTest = ({ size = 18 }) => <IconTestPipe size={size} />;
+const IconCode = ({ size = 18 }) => <IconCode size={size} />;
+const IconBranch = ({ size = 18 }) => <IconGitBranch size={size} />;
+const IconBox = ({ size = 18 }) => <IconPackage size={size} />;
+const IconBug = ({ size = 18 }) => <IconBug size={size} />;
+const IconChart = ({ size = 18 }) => <IconChartBar size={size} />;
+const IconLink = ({ size = 18 }) => <IconLink size={size} />;
+const IconExt = ({ size = 13 }) => <IconExternalLink size={size} />;
+const IconMenu = () => <IconMenu2 size={22} />;
+const IconClose = () => <IconX size={22} />;
+const IconCheck = ({ size = 14 }) => <IconCheck size={size} />;
+const IconPipe = ({ size = 18 }) => <IconGitMerge size={size} />;
+const IconDownload = ({ size = 18 }) => <IconDownload size={size} />;
 
 const CV_PDF_PATH = "Zakaria_Moufid_CV.pdf";
 
@@ -70,14 +98,20 @@ function Bar({ label, icon, level, delay = 0 }) {
 const NAV = ["about", "skills", "experience", "projects", "contact"];
 
 const SKILLS = [
-  { label: "Playwright",   icon: <IconTest  size={15}/>, level: 95 },
-  { label: "TypeScript",   icon: <IconCode  size={15}/>, level: 88 },
-  { label: "Selenium",     icon: <IconBug   size={15}/>, level: 80 },
-  { label: "API Testing",  icon: <IconLink  size={15}/>, level: 90 },
-  { label: "Azure DevOps", icon: <IconBranch size={15}/>, level: 85 },
-  { label: "CI/CD Pipelines", icon: <IconPipe size={15}/>, level: 83 },
-  { label: "Docker",       icon: <IconBox   size={15}/>, level: 75 },
-  { label: "JavaScript",   icon: <IconCode  size={15}/>, level: 87 },
+  { label: "Playwright", icon: <IconTest size={15} />, level: 95 },
+  { label: "TypeScript", icon: <IconCode size={15} />, level: 90 },
+  { label: "JavaScript", icon: <IconCode size={15} />, level: 90 },
+  { label: "API Testing", icon: <IconLink size={15} />, level: 92 },
+  { label: "REST APIs", icon: <IconWorld size={15} />, level: 90 },
+  { label: "Page Object Model", icon: <IconLayout size={15} />, level: 90 },
+  { label: "Azure DevOps", icon: <IconBranch size={15} />, level: 88 },
+  { label: "CI/CD Pipelines", icon: <IconPipe size={15} />, level: 88 },
+  { label: "Docker", icon: <IconBox size={15} />, level: 82 },
+  { label: "Git & GitHub", icon: <IconGit size={15} />, level: 90 },
+  { label: "Cross-Browser Testing", icon: <IconBrowser size={15} />, level: 88 },
+  { label: "Cookies & Sessions", icon: <IconCookie size={15} />, level: 90 },
+  { label: "HTML Reports", icon: <IconReport size={15} />, level: 85 },
+  { label: "Selenium", icon: <IconBug size={15} />, level: 80 },
 ];
 
 const EXPERIENCES = [
@@ -153,6 +187,39 @@ const PROJECTS = [
     tags: ["Playwright", "TypeScript", "Azure DevOps", "POM", "CI/CD", "API Testing"],
     link: "https://github.com/Moufidzakaria/automation-testing-ci-cd-azure-devops",
   },
+  {
+  icon: <IconPipe size={20} />,
+  title: "Enterprise QA Automation Framework",
+  subtitle: "Playwright • TypeScript • Azure DevOps • CI/CD",
+  desc: "Enterprise-grade QA Automation Framework built with Playwright and TypeScript. Features Page Object Model architecture, End-to-End and API Testing, Docker support, Cross-Browser execution, Cookie & Session management, and automated CI/CD pipelines using Azure DevOps and GitHub Actions.",
+  bullets: [
+    "Playwright + TypeScript Enterprise Framework",
+    "Page Object Model (POM) Architecture",
+    "End-to-End & REST API Testing",
+    "Cross-Browser Testing (Chromium, Firefox, WebKit)",
+    "Authentication, Cookies & Session Management",
+    "Docker & Docker Compose",
+    "Azure DevOps + GitHub Actions CI/CD",
+    "HTML Reports, Screenshots & Test Artifacts"
+  ],
+  tags: [
+    "Playwright",
+    "TypeScript",
+    "QA Automation",
+    "API Testing",
+    "Azure DevOps",
+    "GitHub Actions",
+    "Docker",
+    "Docker Compose",
+    "CI/CD",
+    "POM",
+    "Cross Browser",
+    "REST API",
+    "Cookies",
+    "HTML Report"
+  ],
+  link: "https://github.com/Moufidzakaria/Entreprise-End-to-End-2",
+}
 ];
 
 export default function App() {
