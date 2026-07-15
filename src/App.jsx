@@ -26,6 +26,7 @@ import {
   IconLayoutGrid,
   IconBrowser,
   IconApi,
+  IconLinux
 } from "@tabler/icons-react";
 
 const G = "#34d399";
@@ -49,7 +50,7 @@ const IconPipe = ({ size = 18 }) => <IconGitMerge size={size} />;
 const IconDownload = ({ size = 18 }) => <TablerDownload size={size} />;
 const IconLayout = ({ size = 18 }) => <IconLayoutGrid size={size} />;
 const IconGit = ({ size = 18 }) => <IconBrandGit size={size} />;
-
+const IconLinux = ({ size = 18 }) => <IconLinux size={size} />;
 const CV_PDF_PATH = "Zakaria_Moufid_CV.pdf";
 
 function useOnScreen(threshold = 0.15) {
@@ -114,7 +115,7 @@ const SKILLS = [
   { label: "Cookies & Sessions", icon: <IconCookie size={15} />, level: 90 },
   { label: "HTML Reports", icon: <IconReport size={15} />, level: 85 },
   { label: "Selenium", icon: <IconBug size={15} />, level: 80 },
-    { label: "Linux", icon: <IconWorld size={15} />, level: 90 }
+  { label: "Linux", icon: <IconLinux size={15} />, level: 90 }
 ];
 
 const EXPERIENCES = [
