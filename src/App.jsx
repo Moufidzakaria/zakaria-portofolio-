@@ -114,6 +114,7 @@ const SKILLS = [
   { label: "Cookies & Sessions", icon: <IconCookie size={15} />, level: 90 },
   { label: "HTML Reports", icon: <IconReport size={15} />, level: 85 },
   { label: "Selenium", icon: <IconBug size={15} />, level: 80 },
+    { label: "Linux", icon: <IconWorld size={15} />, level: 90 }
 ];
 
 const EXPERIENCES = [
